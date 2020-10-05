@@ -3,16 +3,23 @@
 <div class="container">
     <br><br><br>
     <div class="row">
-        <div class="col-md-12" style="margin:auto; background:white; padding:20px; box-shadow:10px 10px 5px #888">
+        <div class="col-md-12" style="margin:auto; background:white; padding:20px; box-shadow:0px 0px 25px #889">
             <div class="panel-heading">
-                <h2><a href="#">Image Processing App</a></h2>
-                <p>This demo app will analyze any image that's uploaded</p>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h2><a href="#">Image Processing App</a></h2>
+                        <p>This demo app will analyze any image that's uploaded</p>
+                    </div>
+                    <div class="col-md-6">
+                        <a href="{{ route('index') }}" class="btn btn-sm btn-outline-primary float-right">Want to analyze a different image?</a>
+                    </div>
+                </div>
             </div>
             <hr>
-            <div class="row">
+            <div class="row" style="padding:20px;">
                 <div class="col-md-4">
                     <img class="img-thumbnail"
-                        src="{{ ($faces == null) ? asset('img/sample.png') : asset('img/'.$filename) }}"
+                        src="{{ ($faces == null) ? asset('img/sample.png') : asset('processed/image.jpg') }}"
                         alt="Image">
                 </div>
                 <div class="col-md-8 border" style="padding:10px;">
@@ -27,15 +34,6 @@
                             aria-selected="true">Face</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#pills-logos"
-                            role="tab"
-                            class="nav-link"
-                            id="pills-logos-tab"
-                            data-toggle="pill"
-                            aria-controls="pills-logos"
-                            aria-selected="true">Logo</a>
-                        </li>
-                        <li class="nav-item">
                             <a href="#pills-labels"
                             role="tab"
                             class="nav-link"
@@ -43,6 +41,15 @@
                             data-toggle="pill"
                             aria-controls="pills-labels"
                             aria-selected="true">Label</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#pills-logos"
+                            role="tab"
+                            class="nav-link"
+                            id="pills-logos-tab"
+                            data-toggle="pill"
+                            aria-controls="pills-logos"
+                            aria-selected="true">Logo</a>
                         </li>
                         <li class="nav-item">
                             <a href="#pills-properties"

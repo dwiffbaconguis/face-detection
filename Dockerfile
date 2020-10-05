@@ -6,7 +6,7 @@ RUN apk update && apk upgrade
 RUN apk add apache2 bash curl php php-mbstring php-xml php-pdo php-odbc \
     php-pdo_mysql php-pdo_sqlite php-gd php-apache2 php-json php-phar \
     php-zip php-tokenizer php-fileinfo php-dom php-xmlwriter \
-    php-session php-curl sqlite npm
+    php-bcmath php-session php-curl sqlite npm
 RUN curl -sS https://getcomposer.org/installer | php
 RUN mv composer.phar /bin/composer
 COPY ./apache-face-detection.conf /etc/apache2/conf.d/face-detection.conf
